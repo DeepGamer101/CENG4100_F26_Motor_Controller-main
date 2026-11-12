@@ -52,3 +52,4 @@ keeps its value. Write each case as a short sequence of steps.
 | Reviewed by (whole team) | Date | Changes made in review |
 | --- | --- | --- |
 | 1 | Brandon Reiner | 11/05/2026 | Updated ALU 13 cases and 5 register files |
+| 2 | Jose Lopez | 11/12/2026 | None, just reviewed |
