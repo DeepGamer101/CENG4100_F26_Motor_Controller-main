@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lopjosa/Documents/GitHub/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/rtl/tohost.v" into library work
+INFO: [VRFC 10-311] analyzing module tohost
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lopjosa/Documents/GitHub/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/rtl/top.v" into library work
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lopjosa/Documents/GitHub/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/tb/tb_template.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_template
