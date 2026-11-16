@@ -77,3 +77,4 @@ The ALU's `result` drives both `alu_result` and the register file's
 | --- | --- | --- |
 | [Review date] | Defined the Lab 1 ports, register timing, and ALU operation codes. | [Team members who agreed] |
 | 11-16-26 | Filled out all the Intefaces | Jose Lopez |
+| 11-16-26 | Agreed to, no changes | Edward Corey |
