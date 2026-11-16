@@ -3,8 +3,8 @@
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Mon Nov 16 10:10:36 2026
-# Process ID         : 26168
+# Start of session at: Mon Nov 16 11:18:00 2026
+# Process ID         : 40140
 # Current directory  : C:/Users/lopjosa/Documents/GitHub/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim
 # Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_template_snap/xsim_script.tcl}
 # Log file           : C:/Users/lopjosa/Documents/GitHub/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/xsim.log
@@ -19,7 +19,7 @@
 # Host memory        : 33585 MB
 # Swap memory        : 7247 MB
 # Total Virtual      : 40832 MB
-# Available Virtual  : 16966 MB
+# Available Virtual  : 12478 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_template_snap/xsim_script.tcl
 run -all
