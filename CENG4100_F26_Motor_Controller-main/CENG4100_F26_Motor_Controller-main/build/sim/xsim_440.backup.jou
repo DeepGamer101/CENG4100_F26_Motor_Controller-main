@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Thu Nov 19 10:17:31 2026
+# Process ID         : 440
+# Current directory  : C:/dev/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_template_snap/xsim_script.tcl}
+# Log file           : C:/dev/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/xsim.log
+# Journal file       : C:/dev/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim\xsim.jou
+# Running On         : 262075CD413C1Y8
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 7840HS w/ Radeon 780M Graphics     
+# CPU Frequency      : 3793 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33585 MB
+# Swap memory        : 18253 MB
+# Total Virtual      : 51838 MB
+# Available Virtual  : 25658 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_template_snap/xsim_script.tcl
+run -all
