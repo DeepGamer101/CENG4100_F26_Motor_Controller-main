@@ -1,0 +1,86 @@
+# Step 14: Software Build and Peripheral Notes
+Jose A. Lopez Andrade
+
+## Build Results
+
+Both programs compiled successfully using RISC-V GCC 15.2.0.
+
+| Program | Code size | Data size |
+|---|---:|---:|
+| hello | 1,628 bytes | 244 bytes |
+| case1_motor | 2,372 bytes | 6,484 bytes |
+
+Both programs fit within the configured 16 KB instruction memory
+and 16 KB data memory. Data memory must also provide room for the stack.
+These are build results; runtime correctness and timing are not yet verified.
+
+## Hello Disassembly
+
+- `_start` begins at address 0x00000000.
+- At 0x8, `auipc sp,0x8`, followed by `addi sp,sp,-8` at 0xC,
+  sets the stack pointer to 0x8000.
+- Startup clears the .bss region before calling main.
+- At 0x30, `jal ra,458 <main>` calls main at address 0x458.
+- At 0x48C, `jal ra,584 <__mulsi3>` calls software multiplication.
+- __mulsi3 starts at 0x584 and uses shifts, additions, and branches.
+  This is needed because RV32I has no hardware multiply instruction.
+
+## Motor Firmware Explanation
+
+The firmware uses a PI controller to adjust motor speed. It subtracts
+measured speed from target speed to calculate the error. The proportional
+term responds to the current error, while the integral term accumulates
+error over time. The integral is limited to prevent windup.
+
+The combined result is shifted right by eight bits to account for the Q8
+gains, limited between zero and PWM_RANGE, and written to PWM_DUTY.
+Branches and software multiplication can cause execution time to vary
+between passes.
+
+The acceptance harness checks that all outputs match the golden data,
+every pass takes the same number of cycles, and the slowest pass meets
+the timing target.
+
+## Peripheral Behavior Draft
+
+All peripheral registers require 32-bit word accesses.
+Byte and halfword accesses are undefined.
+
+### GPIO
+
+- LED, 0x10000000, read/write:
+  Bits 15:0 control the LED register. When PWM is enabled, the visible
+  LEDs are gated by the PWM output.
+- SW, 0x10000004, read-only:
+  Bits 15:0 return the switch states.
+- BTN, 0x10000008, read-only:
+  Bits 4:0 return Up, Left, Right, Down, and Center button states.
+- SEG, 0x1000000C, read/write:
+  Bits 15:0 store four hexadecimal display digits.
+
+### UART
+
+Communication uses 115200 baud, eight data bits, no parity,
+and one stop bit.
+
+- UART_TX, 0x10001000, write-only:
+  Writing bits 7:0 sends one byte. Software waits until TX is not busy.
+- UART_STATUS, 0x10001004, read-only:
+  Bit 0 indicates TX busy. Bit 1 indicates an RX byte is ready.
+- UART_RX, 0x10001008, read-only:
+  Bits 7:0 return the received byte. Reading clears the RX-ready flag.
+
+### Timer
+
+- TIMER_COUNT, 0x10002000, read-only:
+  Counts CPU clock cycles since reset and wraps at 2^32.
+- TIMER_CTRL, 0x10002004, write-only:
+  Writing 1 resets the count to zero.
+- Software measures elapsed cycles using unsigned end-minus-start
+  subtraction. CPU_HZ must match the CPU clock for time conversion.
+
+## Remaining Follow-Up
+
+- Explain the motor firmware to the team.
+- Use the recorded sizes when making the D4 memory decision.
+- Review the peripheral behavior draft with the team.
