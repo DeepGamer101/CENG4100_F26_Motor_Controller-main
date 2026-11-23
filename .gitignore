@@ -16,3 +16,5 @@ CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/
 CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/xsim.dir/work/tohost.sdb
 CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/xsim.dir/work/tb_template.sdb
 CENG4100_F26_Motor_Controller-main/CENG4100_F26_Motor_Controller-main/build/sim/xsim.dir/tb_template_snap/xsimkernel.log
+**/sw/build/
+**/__pycache__/
